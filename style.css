@@ -1,6 +1,6 @@
 /* Vantorax Studio — style.css
    1 Tokens · 2 Base · 3 Layout · 4 Nav · 5 Buttons · 6 Hero · 7 Sections · 8 Mockups
-   9 Work + modal · 10 Compare · 11 Pricing · 12 FAQ · 13 Form · 14 Footer · 15 Motion · 16 Responsive */
+   9 Work + modal · 10 Compare · 11 Pricing · 12 FAQ · 13 Inquiry · 14 Footer · 15 Motion · 16 Responsive */
 @import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Hanken+Grotesk:wght@400;500;600&display=swap");
 
 /* 1 Tokens */
@@ -201,8 +201,6 @@ dialog dl{margin:1rem 0 1.5rem}dialog dt{font-size:.72rem;letter-spacing:.14em;t
 .plan.pop .tag{top:0}
 
 
-.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-.status.bad{border-left-color:#a52a1d}
 .terms{margin:0 0 1rem;font-size:.8rem;color:var(--gray)}.plan.pop .terms{color:#b5b0a5}
 .scope{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--line)}
 .scope dl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);margin:1.5rem 0 0}
@@ -219,16 +217,15 @@ dialog dl{margin:1rem 0 1.5rem}dialog dt{font-size:.72rem;letter-spacing:.14em;t
 .panel.open{grid-template-rows:1fr;opacity:1}
 .panel>div{overflow:hidden}.panel p{margin:0;padding:1rem 0 1.5rem}
 
-/* 13 Form */
-form{display:grid;gap:1.4rem}
-.fr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem}
-label{display:block;margin-bottom:.2rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gray)}
-input,select,textarea{width:100%;min-height:54px;padding:.8rem 0;border:0;border-bottom:1px solid var(--black);border-radius:0;background:transparent;font:inherit;transition:border-color .3s,box-shadow .3s}
-input:focus,select:focus,textarea:focus{outline:0;border-color:var(--bronze);box-shadow:0 1px 0 var(--bronze)}
-[aria-invalid=true]{border-color:#a52a1d}
-.err{min-height:1.2em;font-size:.85rem;color:#a52a1d}
-.status{padding:1.4rem;border-left:3px solid var(--bronze);background:var(--white)}
-.status h3{margin-bottom:.4rem}
+/* 13 Inquiry panel */
+.inquiry{padding:clamp(1.5rem,4vw,2.5rem);border:1px solid var(--line);background:var(--white)}
+.inquiry h3{margin-bottom:0}
+.inquiry ol{margin:1rem 0 2rem;padding:0;list-style:none;counter-reset:step}
+.inquiry li{display:grid;grid-template-columns:2.5rem minmax(0,1fr);gap:.8rem;padding:.9rem 0;border-top:1px solid var(--line);counter-increment:step}
+.inquiry li::before{content:counter(step,decimal-leading-zero);font:400 1.1rem var(--serif);color:var(--bronze-d)}
+.inquiry .btn{width:100%}
+.inquiry small{display:block;margin-top:1rem;font-size:.85rem;color:var(--gray)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* 14 Footer */
 footer{padding:4rem 0 2rem;background:var(--black);color:#c9c4b8}
@@ -266,4 +263,4 @@ footer a{display:inline-block;padding:.3rem 0;text-decoration:none}footer a:hove
   .nav.menu-open{background:transparent;backdrop-filter:none}
 }
 @media(max-width:767px){.hero-bg img,.cta img{inset:0;height:100%;transform:none}.services li:hover,.why div:hover{padding-left:0;transform:none}}
-@media(max-width:560px){.scope dl{grid-template-columns:1fr}.fr,.shift{grid-template-columns:1fr}.btn{width:100%}.compare{aspect-ratio:4/5}.compare .site{font-size:4.4cqw}.site.after .hero-copy h4{font-size:3em}}
+@media(max-width:560px){.scope dl{grid-template-columns:1fr}.shift{grid-template-columns:1fr}.btn{width:100%}.compare{aspect-ratio:4/5}.compare .site{font-size:4.4cqw}.site.after .hero-copy h4{font-size:3em}}
