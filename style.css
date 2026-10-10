@@ -175,6 +175,20 @@ dialog .body{padding:clamp(1.5rem,4vw,3rem)}
 dialog dl{margin:1rem 0 1.5rem}dialog dt{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze)}dialog dd{margin:0 0 .9rem}
 .x{position:absolute;right:.8rem;top:.8rem;z-index:3;min-width:44px;min-height:44px;border:0;background:var(--black);color:var(--ivory);cursor:pointer}
 
+/* 9b Website concepts */
+.concepts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);margin-top:3rem}
+.concept{display:flex;flex-direction:column;border:1px solid var(--line);background:var(--white);transition:transform .45s var(--ease),border-color .3s}
+.concept:hover{transform:translateY(-6px);border-color:var(--bronze-d)}
+.concept .photo{aspect-ratio:4/3}
+.c-body{display:flex;flex:1;flex-direction:column;padding:1.5rem}
+.c-top{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:.8rem}
+.c-pkg{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze-d)}
+.c-price{font:400 2rem/1 var(--serif)}.c-price small{margin-left:.4rem;font:400 .75rem var(--sans);color:var(--gray)}
+.concept h3{margin-bottom:.6rem}
+.concept p{flex:1;margin-bottom:1.5rem}
+.concept .btn{width:100%}
+.disclose{max-width:70ch;margin:1.5rem 0 0;padding:1rem 1.25rem;border-left:3px solid var(--bronze-d);background:var(--sand);font-size:.95rem}
+
 /* 10 Compare */
 .compare{position:relative;aspect-ratio:16/11;max-width:1000px;margin:2rem auto 0;overflow:hidden;user-select:none;touch-action:pan-y}
 .compare .pane{position:absolute;inset:0}
@@ -253,6 +267,7 @@ footer a{display:inline-block;padding:.3rem 0;text-decoration:none}footer a:hove
 /* 16 Responsive */
 @media(max-width:1180px){.steps{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:960px){
+  .concepts{grid-template-columns:1fr}
   .scope dl{grid-template-columns:repeat(2,minmax(0,1fr))}
   .split,.hero .wrap,dialog .grid{grid-template-columns:1fr}
   .hero{min-height:92svh}.hero .float{justify-self:start}.scroll{display:none}
